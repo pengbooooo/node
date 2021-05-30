@@ -12,17 +12,7 @@ var connection = mysql.createConnection({
     database: "nodeproject"
 });
 connection.connect();
-// fs.readFile(path.join(__dirname, "bean/user.json"), {
-//     encoding: "utf-8"
-// }, (err, d) => {
-//     data = JSON.parse(d);
-// })
-/* GET home page. */
 router.get('/', function (req, res, next) {
-    // let newData = data.splice(0,2);
-    // res.render('index', {
-    //     list: newData
-    // });
     var sql = 'select * from connection order by id desc';
     connection.query(sql, function (err, result, fields) {
         if (err) {
@@ -53,16 +43,7 @@ router.post('/mod', (req, res) => {
     res.redirect('/');
 })
 router.post('/', (req, res) => {
-    // let obj = {
-    //     name: req.body.name,
-    //     ch: req.body.ch,
-    //     ma: req.body.ma,
-    //     en: req.body.en,
-    //     am: Number(parseInt(req.body.ch) + parseInt(req.body.ma) + parseInt(req.body.en))
-    // }
-    // data.unshift(obj);
-    // res.redirect('/');
-    var insql = 'insert into connection(name,ch,ma,en) values(?,?,?,?)';
+    var insql = 'insert into admin(name,ch,ma,en) values(?,?,?,?)';
     connection.query(insql, [req.body.name, req.body.ch, req.body.ma, req.body.en], function (err, result, fields) {
         if (err) {
             console.log('err', err);
@@ -73,7 +54,21 @@ router.post('/', (req, res) => {
         }
     });
 })
-router.post("/nextPage",(req,res)=>{
-    // res.json(data);
-})
+router.post("/nextPage",(req,res)=>{})
 module.exports = router;
+// const { text } = require('express');
+// var express = require('express');
+// var router = express.Router();
+// var db = require('./db/db');
+
+// /* GET home page. */
+// router.get('/', function(req, res, next) {
+//     db.sql("select * from admin_table ",(err,rows) =>{
+//       // res.render('index',{data:rows})
+//       console.log(err);
+//       console.log(rows);
+//     })
+//     res.render(text);
+// });
+
+// module.exports = router;

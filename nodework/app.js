@@ -12,7 +12,8 @@ var homeRouter = require('./routes/home');
 var registeredRouter = require('./routes/registered');
 var blogRouter = require('./routes/blog');
 var blog2Router = require('./routes/blog2');
-
+var textRouter = require('./routes/text');
+var addRouter = require('./routes/add');
 
 // var blankPageRouter = require('./routes/blankPage');
 // var contactRouter = require('./routes/contact');
@@ -47,6 +48,8 @@ app.use('/home',homeRouter);
 app.use('/registered',registeredRouter);
 app.use('/blog',blogRouter);
 app.use('/blog2',blog2Router);
+app.use('/text',textRouter);
+app.use('/add',addRouter);
 // app.use('/blankPage',blankPageRouter);
 // app.use('/contact',contactRouter);
 // app.use('/elastic',elasticRouter);

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<html>
+<body>
+    <form action="/text/add" method="POST">
+    <input type="hidden" name="id" value="<%=row.id %>">
+    <input type="text" name="name" value="<%=row.name %>" placeholder="name">
+    <input type="text" name="ch" value="<%=row.ch %>" placeholder="ch">
+    <input type="text" name="ma" value="<%=row.ma %>" placeholder="ma">
+    <input type="text" name="en" value="<%=row.en %>" placeholder="en">
+    <input type="submit"/>
+    </form>
+
+</body>
+</html>
