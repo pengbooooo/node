@@ -12,12 +12,12 @@
             <div id="header">
                 <span class="logo">blog about web design</span>																																																											<div style="position:absolute;top:1px;left:1px;height:0px;width:0px;overflow:hidden"><h1><a href="sc.chinaz.com">best free templates</a></h1></div>
                 <ul id="menu">
-                    <li><a href="blog"><img src="images/but1.gif" alt="" width="64" height="42" /></a></li>
-                    <li><a href="blog2"><img src="images/but2.gif" alt="" width="108" height="42" /></a></li>
+                    <li><a href="home"><img src="images/but1.gif" alt="" width="64" height="42" /></a></li>
+                    <!-- <li><a href="blog2"><img src="images/but2.gif" alt="" width="108" height="42" /></a></li>
                     <li><a href="blog2"><img src="images/but3.gif" alt="" width="93" height="42" /></a></li>
                     <li><a href="blog2"><img src="images/but4.gif" alt="" width="101" height="42" /></a></li>
                     <li><a href="blog2"><img src="images/but5.gif" alt="" width="86" height="42" /></a></li>
-                    <li><a href="blog2"><img src="images/but6.gif" alt="" width="102" height="42" /></a></li>
+                    <li><a href="blog2"><img src="images/but6.gif" alt="" width="102" height="42" /></a></li> -->
                 </ul>
                 <img src="images/spacer.gif" alt="setalpm" width="120" height="120" border="0" usemap="#Map" class="rss" />
                 <map name="Map">
@@ -26,31 +26,37 @@
             </div>
             <div id="content">
                 <div id="posts">
-                    <div class="post">
-                        <h2>Retro Photos</h2>
-                        <div><span class="date">Mar 18th</span><span class="categories">in: Photos, Retro</span></div>
-                        <div class="description">
-                            <p><img src="images/pic1.jpg" alt="" width="239" height="232" />
-                            Lorem ipsum dolor sit amet, consectetuer adipi scing elit.Mauris urna urna, varius et, interdum a, tincidunt quis, libero. Aenean sit amturpis. Maecenas hendrerit, massa ac laoreet iaculipede mnisl ullamcorpermassa, cosectetuer feipsum eget pede. Proin nunc. Donec nonummy, tellus er sodales enim, in tincidunmauris in odio. Massa ac laoreet iaculipede nisl ullamcorpermassa, ac consectetuer feipsum eget pede.  Proin nunc. Donec massa. Nulla pulvinar, nisl ac convallis nonummy, tellus eros sodales enim, in tincidunt mauris in odio.  massa ac laoreet iaculipede niorpermassa,consectetuer feipsum eget pede. Proin nunc. Donec massa. Nulla pulvinar, nisl ac convallis nonummy, tellus eros sodales enim, in tincidunt mauris in odio. Lorem ipsum dolor sit amet, consectetuer adipi scing elit.Mauris urna urna, varius et, interdum a, tincidunt quis, libero. Aenean sit amturpis. </p>
-                        </div>
-                        <p class="comments">Comments - <a href="sc.chinaz.com">17</a>   <span>|</span>   <a href="blog2">Continue Reading</a></p>
-                    </div>
-                    <div class="post">
-                        <h2>Original Wordpress Themes</h2>
-                        <div><span class="date">Mar 12th</span><span class="categories">in: Design, Themes</span></div>
-                        <div class="description">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipi scing elit.Mauris urna urna, varius et, interdum a, tincidunt quis, libero. Aenean sit amturpis. Maecenas hendrerit, massa ac laoreet iaculipede mnisl ullamcorpermassa, cosectetuer feipsum eget pede. Proin nunc. Donec nonummy, tellus er sodales enim, in tincidunmauris in odio. Massa ac laoreet iaculipede nisl ullamcorpermassa, ac consectetuer feipsum eget pede.  Proin nunc. Donec massa. Nulla pulvinar, nisl ac convallis nonummy, tellus eros sodales enim, in tincidunt mauris in odio.  massa ac laoreet iaculipede niorpermassa,consectetuer feipsum eget pede. Proin nunc. Donec massa. Nulla pulvinar, nisl ac convallis nonummy, tellus eros sodales enim, in tincidunt mauris in odio. Lorem ipsum dolor sit amet, consectetuer adipi scing elit.Mauris urna urna, varius et, interdum a, tincidunt quis, libero. Aenean sit amturpis. </p>
-                        </div>
-                        <p class="comments">Comments - <a href="sc.chinaz.com">17</a>   <span>|</span>   <a href="blog2">Continue Reading</a></p>
-                    </div>
+                    <div class="post"><h2>your article</h2></div>
+                    
+                    <ul>
+                        <% for(let o of data){ %>
+                            <li>						
+                                <div class="post">
+                                    
+                                    <div><span class="date">Mar 18th</span><span class="categories"><%=o.userName%></span></div>
+                                    <div class="description">
+                                        <p><img src="images/pic1.jpg" alt="" width="239" height="232" />
+                                        <%=o.yourarticle%></p>
+                                    </div>
+                                    <p class="comments">Comments - <a href="sc.chinaz.com">17</a>   <span>|</span>   <a href="blog2">comment</a></p>
+                                </div>
+                        </li>
+                            <%}%>
+                    </ul>
                 </div>
                 <div id="sidebar">
                     <div id="search">
-                        <input type="text" value="Search"> <a href="sc.chinaz.com"><img src="images/go.gif" alt="" width="26" height="26" /></a>
+                        <form action="/blog" method="POST">
+                            <tr>
+                                <td><input type="text" name="userName" placeholder="查询"></td>
+                                <td><input type="submit" style="margin: 50px 0;width:40px;padding:0px;height: 23px;" /></td>
+                        </tr>
+                        </form>
+                        <!-- <input type="text" value="Search"> <a href="sc.chinaz.com"><img src="images/go.gif" alt="" width="26" height="26" /></a> -->
                     </div>
                     <div class="list">
-                        <img src="images/title1.gif" alt="" width="186" height="36" />
-                        <ul>
+                        <!-- <img src="images/title1.gif" alt="" width="186" height="36" /> -->
+                        <!-- <ul>
                             <li><a href="sc.chinaz.com">animation</a></li>
                             <li><a href="sc.chinaz.com">magazines</a></li>
                             <li><a href="sc.chinaz.com">architecture</a></li>
@@ -64,9 +70,9 @@
                             <li><a href="sc.chinaz.com">graphic design</a></li>
                             <li><a href="sc.chinaz.com">web design</a></li>
                             <li><a href="sc.chinaz.com">illustration</a></li>
-                        </ul>
-                        <img src="images/title2.gif" alt="" width="180" height="34" />
-                        <ul>
+                        </ul> -->
+                        <!-- <img src="images/title2.gif" alt="" width="180" height="34" /> -->
+                        <!-- <ul>
                             <li><a href="sc.chinaz.com">January</a></li>
                             <li><a href="sc.chinaz.com">July</a></li>
                             <li><a href="sc.chinaz.com">February</a></li>
@@ -79,7 +85,7 @@
                             <li><a href="sc.chinaz.com">November</a></li>
                             <li><a href="sc.chinaz.com">June</a></li>
                             <li><a href="sc.chinaz.com">December</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>

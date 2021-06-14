@@ -12,8 +12,8 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 router.post('/', (req, res) => {
-    var insertSql = 'insert into registered(Name,Password) values(?,?)';
-    connection.query(insertSql, [req.body.Name, req.body.Password], function (err, result, fields) {
+    var insertSql = 'insert into registered(name,password) values(?,?)';
+    connection.query(insertSql, [req.body.name, req.body.password], function (err, result, fields) {
         if (err) {
             console.log('err', err);
             return;

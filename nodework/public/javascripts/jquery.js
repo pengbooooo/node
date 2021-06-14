@@ -42,14 +42,14 @@ function cliLogin() {
 }
 //注册操作
 
-function Sendpwd(sender) {
-	var time=30;
-	var phones = $.trim($("#phone").val());
-	if ($.trim(phones) == "") {
-		Tip('请填写手机号码！');
-		$("#phone").focus();
-		return;
-	}
+// function Sendpwd(sender) {
+// 	var time=30;
+// 	var phones = $.trim($("#phone").val());
+// 	if ($.trim(phones) == "") {
+// 		Tip('请填写手机号码！');
+// 		$("#phone").focus();
+// 		return;
+// 	}
 	var code=$(sender);
 		if (validCode) {
 			validCode=false;

@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
   // }
   // console.log(req.body.Name);
   // console.log(req.body.Password);
-  var selectSQL = "select Name,password from registered where Name = '" + req.body.Name + "' and password = " + req.body.Password + "";
+  var selectSQL = "select name,password from registered where name = '" + req.body.name + "' and password = " +"'"+ req.body.password + "'";
   connection.query(selectSQL, function (err, result, fields) {
       if (err) {
           console.log('err', err);
